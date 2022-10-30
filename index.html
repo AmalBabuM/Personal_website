@@ -21,6 +21,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <!-- =======================================================
   * Template Name: DevFolio - v4.9.1
@@ -148,7 +149,7 @@
                       Contributed to two open source coding project on Git Hub
                     </p>
                     <p class="lead">
-                    I am proficient in English and Hindi, programming languages known are Java, C, C++,HTML,CSS,Java Script, have completed a six month course in photoshop from G-Tech
+                    I am proficient in programming languages Java, C, C++,HTML,CSS,Java Script, have completed a six month course in photoshop from G-Tech
                     </p>
                   </div>
                 </div>
@@ -662,7 +663,7 @@
                       </h5>
                     </div>
                     <div>
-                      <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                      <form id="submit-form" action=""  class="php-email-form">
                         <div class="row">
                           <div class="col-md-12 mb-3">
                             <div class="form-group">
@@ -685,9 +686,9 @@
                             </div>
                           </div>
                           <div class="col-md-12 text-center my-3">
-                            <div class="loading">Loading</div>
+                            <!-- <div class="loading">Loading</div>
                             <div class="error-message"></div>
-                            <div class="sent-message">Your message has been sent. Thank you!</div>
+                            <div class="sent-message">Your message has been sent. Thank you!</div> -->
                           </div>
                           <div class="col-md-12 text-center">
                             <button type="submit" class="button button-a button-big button-rouded">Send Message</button>
@@ -768,7 +769,25 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    $("#submit-form").submit((e)=>{
+        e.preventDefault()
+        $.ajax({
+            url:"https://script.google.com/macros/s/AKfycbwjmfqmGJxM_Kar8gpvvyCaEVkEALLyOziHPHUU9_EsUxU_e4Xl_2ZJI0W58TGrPq7b/exec",
+            data:$("#submit-form").serialize(),
+            method:"post",
+            success:function (response){
+                alert("Form submitted successfully")
+                window.location.reload()
+                //window.location.href="https://google.com"
+            },
+            error:function (err){
+                alert("Something Error")
 
+            }
+        })
+    })
+</script>
 </body>
 
 </html>
