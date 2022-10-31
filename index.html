@@ -666,26 +666,27 @@
                       </h5>
                     </div>
                     <div>
-                      <form id="submit-form" action=""  class="php-email-form">
+                      <form id="submit-form" action=""  >
                         <div class="row">
                           <div class="col-md-12 mb-3">
                             <div class="form-group">
-                              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" >
+                              <p class="error" id="nameError"></p>
                             </div>
                           </div>
                           <div class="col-md-12 mb-3">
                             <div class="form-group">
-                              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" >
                             </div>
                           </div>
                           <div class="col-md-12 mb-3">
                             <div class="form-group">
-                              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" >
                             </div>
                           </div>
                           <div class="col-md-12">
                             <div class="form-group">
-                              <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                              <textarea class="form-control" name="message" rows="5" placeholder="Message" ></textarea>
                             </div>
                           </div>
                           <div class="col-md-12 text-center my-3">
@@ -694,7 +695,8 @@
                             <div class="sent-message">Your message has been sent. Thank you!</div> -->
                           </div>
                           <div class="col-md-12 text-center">
-                            <button type="submit" class="button button-a button-big button-rouded">Send Message</button>
+                            <button onclick="sumbitData(event)"  class="button button-a button-big button-rouded">Send Message</button>
+                            <!-- <button type="submit" class="button button-a button-big button-rouded">Send Message</button> -->
                           </div>
                         </div>
                       </form>
@@ -758,7 +760,13 @@
     </div>
   </footer> -->
   <!-- End  Footer -->
-
+<style>
+  .error{
+    color: red;
+    padding: 0;
+    margin: 0;
+  }
+</style>
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
@@ -772,7 +780,8 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script>
+  <script src="assets/js/script.js"></script>
+  <!-- <script>
     $("#submit-form").submit((e)=>{
         e.preventDefault()
         $.ajax({
@@ -790,7 +799,7 @@
             }
         })
     })
-</script>
+</script> -->
 </body>
 
 </html>
