@@ -20,9 +20,9 @@ function sumbitData(event) {
     }else {  
         nameError.innerHTML = ""
     }
-    if (email.value === '') {
+    if (email.value === '' || email.value.indexOf('@')<=0 || (email.value.charAt(email.value.length-4)!='.')&&(email.value.charAt(email.value.length-3)!='.')) {
         error = false;
-        emailError.innerHTML = "Please enter your email"
+        emailError.innerHTML = "Please enter your correct email"
     }else {  
         emailError.innerHTML = ""
     }
