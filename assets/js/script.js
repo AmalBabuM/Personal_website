@@ -46,8 +46,7 @@ function sumbitData(event) {
 }
 function called() {
     console.log("Form Submitted")
-    // $("#submit-form").submit((e) => {
-        // e.preventDefault()
+    
 
         $.ajax({
             url: "https://script.google.com/macros/s/AKfycbwjmfqmGJxM_Kar8gpvvyCaEVkEALLyOziHPHUU9_EsUxU_e4Xl_2ZJI0W58TGrPq7b/exec",
@@ -56,13 +55,13 @@ function called() {
             success: function (response) {
                 alert("Form submitted successfully")
                 window.location.reload()
-                //window.location.href="https://google.com"
+                
             },
             error: function (err) {
                 alert("Something Error")
 
             }
         })
-    // })
+    
 
 }
